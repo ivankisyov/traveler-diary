@@ -29,9 +29,9 @@ You love travelling and nature. You want to keep track of all the places you hav
   - Bulgarian
   - English
   
-  ## Tech Stack
-  - FE: Angular, NgRx, Angular Material
-  - BE: Firebase
-  
-  ## Useful Resources
-  - [My Knowledgebase](https://github.com/ivankisyov/knowledgebase)
+## Tech Stack
+- FE: Angular, NgRx, Angular Material
+- BE: Firebase
+
+## Useful Resources
+- [My Knowledgebase](https://github.com/ivankisyov/knowledgebase)
