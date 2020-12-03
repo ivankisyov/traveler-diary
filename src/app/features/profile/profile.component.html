@@ -1,0 +1,50 @@
+<div *ngIf="auth.user$ | async as user" class="container">
+  <div class="row justify-items-center profile-header">
+    <div class="col d-flex justify-content-center">
+      <mat-card
+        class="align-items-center d-flex flex-column text-center p-4"
+      >
+        <mat-card-header>
+          <mat-card-title>{{ user.name }}</mat-card-title>
+          <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <img
+          class="my-2 profile-photo"
+          src="assets/ivan-kisyov.jpg"
+          alt="Profile Photo - Ivan Kisyov"
+        />
+        <mat-card-content>
+          <dl class="d-flex">
+            <dt class="mr-1">
+              {{ 'profile.roleLabel' | translate }}
+            </dt>
+            <dd>{{ 'profile.role' | translate }}</dd>
+          </dl>
+        </mat-card-content>
+        <mat-card-actions
+          class="row d-flex flex-column w-100 border-top"
+        >
+          <div class="col">
+            <h2>{{ 'profile.manage.heading' | translate }}</h2>
+          </div>
+          <div class="col">
+            <button
+              mat-raised-button
+              color="primary"
+              class="mb-2"
+              routerLink="manage-visited-places"
+            >
+              {{ 'profile.manage.ctaVisitedPlaces' | translate }}
+            </button>
+          </div>
+          <div class="col">
+            <button mat-raised-button color="primary" class="d-none">
+              {{ 'profile.manage.ctaWishlist' | translate }}
+            </button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

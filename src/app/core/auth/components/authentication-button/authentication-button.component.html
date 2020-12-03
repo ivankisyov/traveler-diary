@@ -1,0 +1,5 @@
+<traveler-login-button *ngIf="(auth.isAuthenticated$ | async) === false">
+</traveler-login-button>
+
+<traveler-logout-button *ngIf="auth.isAuthenticated$ | async">
+</traveler-logout-button>

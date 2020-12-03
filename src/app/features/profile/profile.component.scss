@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+}
+
+.mat-card {
+  max-width: 300px;
+}
+
+.profile-photo {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+}

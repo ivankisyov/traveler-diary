@@ -1,0 +1,127 @@
+<ng-container
+  *ngIf="(auth.isLoading$ | async) || (loading$ | async); else loaded"
+>
+  <traveler-ui-loading></traveler-ui-loading>
+</ng-container>
+
+<ng-template #loaded>
+  <div class="example-container">
+    <mat-toolbar
+      color="primary"
+      class="example-toolbar position-relative"
+    >
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1 class="example-app-name">{{ 'appTitle' | translate }}</h1>
+      <a routerLink="/" title="Traveler Diary" class="branding">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="127.5 209.4 363.9 364"
+        >
+          <path
+            fill="#FFF"
+            d="M294.8 339.9h93.1v111.5h-93.1V339.9z"
+          />
+          <circle
+            fill="#FFF"
+            stroke="#EACE49"
+            stroke-width="10"
+            stroke-miterlimit="10"
+            cx="309.5"
+            cy="391.4"
+            r="177"
+          />
+          <path
+            fill="#EACE49"
+            d="M413 299.4c-12.8-4.1-26.9-5.8-40.2-5.8-22.5 0-46.7 4.6-63.3 17.2-16.6-12.6-40.8-17.2-63.3-17.2s-46.7 4.6-63.3 17.2v168.6c0 2.9 2.9 5.8 5.8 5.8 1.2 0 1.7-.6 2.9-.6 15.5-7.5 37.9-12.6 54.6-12.6 22.5 0 46.7 4.6 63.3 17.2 15.5-9.9 43.7-17.2 63.3-17.2 19 0 38.5 3.5 54.6 12 1.2.6 1.7.6 2.9.6 2.9 0 5.8-2.9 5.8-5.8v-168c-7-5.2-14.5-8.5-23.1-11.4zm0 155.3c-12.6-4.1-26.5-5.8-40.2-5.8-19.6 0-47.8 7.5-63.3 17.2V333.9c15.5-9.9 43.7-17.2 63.3-17.2 13.7 0 27.7 1.7 40.2 5.8v132.2z"
+          />
+          <path
+            fill="#3F51B5"
+            d="M309.5 346.8c-20.5 0-37 16.6-37 37 0 27.7 37 68.7 37 68.7s37-41 37-68.7c-.1-20.4-16.5-37-37-37zm0 50.3c-7.4 0-13.2-6-13.2-13.2 0-7.4 6-13.2 13.2-13.2 7.4 0 13.2 6 13.2 13.2s-5.9 13.2-13.2 13.2z"
+          />
+          <circle fill="#3F51B5" cx="309.5" cy="383.3" r="22.8" />
+          <path
+            fill="#FFF"
+            d="M309.5 401l-2.9-2.5c-9.9-9.1-16.5-15.1-16.5-22.3 0-6 4.6-10.6 10.6-10.6 3.3 0 6.6 1.5 8.7 4.1 2.1-2.5 5.4-4.1 8.7-4.1 6 0 10.6 4.6 10.6 10.6 0 7.4-6.6 13.4-16.6 22.3l-2.6 2.5z"
+          />
+        </svg>
+      </a>
+
+      <div class="ml-auto" *ngIf="language$ | async as language">
+        <button mat-button [matMenuTriggerFor]="beforeMenu">
+          <mat-icon>language</mat-icon>
+        </button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+          <button
+            mat-menu-item
+            class="lang-btn"
+            [ngClass]="{ active: language === 'en' }"
+            (click)="useLanguage('en')"
+          >
+            en
+          </button>
+          <button
+            mat-menu-item
+            class="lang-btn"
+            [ngClass]="{ active: language === 'bg' }"
+            (click)="useLanguage('bg')"
+          >
+            bg
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container">
+      <mat-sidenav #snav fixedTopGap="56">
+        <mat-nav-list>
+          <a
+            mat-list-item
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="snav.toggle()"
+          >
+            <mat-icon>home</mat-icon>
+            <span class="ml-2">{{
+              'mainMenu.home' | translate
+            }}</span></a
+          >
+          <a
+            mat-list-item
+            routerLink="/visited-places"
+            routerLinkActive="active"
+            (click)="snav.toggle()"
+          >
+            <mat-icon>playlist_add_check</mat-icon>
+            <span class="ml-2">{{
+              'mainMenu.visitedPlaces' | translate
+            }}</span></a
+          >
+          <a
+            mat-list-item
+            routerLink="/profile"
+            routerLinkActive="active"
+            (click)="snav.toggle()"
+          >
+            <mat-icon>account_circle</mat-icon>
+            <span class="ml-2">{{
+              'mainMenu.profile' | translate
+            }}</span></a
+          >
+          <traveler-authentication-button
+            (click)="snav.toggle()"
+          ></traveler-authentication-button>
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content class="justify-content-center">
+        <router-outlet></router-outlet>
+        <footer class="footer d-none justify-content-center">
+          Made with love by Ivan Kisyov
+        </footer>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</ng-template>

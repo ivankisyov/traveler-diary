@@ -1,0 +1,39 @@
+{
+  "mainMenu": {
+    "home": "Начало",
+    "profile": "Моят Профил",
+    "visitedPlaces": "Посетени Места"
+  },
+  "appTitle": "Дневника на пътешественика",
+  "logout": "Изход",
+  "login": "Вход",
+  "home": {
+    "intro": "Обичам пътуванията и природата.",
+    "intro-subtitle": "Искаш ли да видиш моята приключенска колекция:",
+    "cta": "О, да!"
+  },
+  "profile": {
+    "roleLabel": "Роля:",
+    "role": "Админ",
+    "manage": {
+      "heading": "Управление на:",
+      "ctaVisitedPlaces": "Посетени Места",
+      "ctaWishlist": "Желая Да Посетя"
+    }
+  },
+  "visitedPlaces": {
+    "mainHeading": "Виж къде съм бил до сега"
+  },
+  "uploadImageForm": {
+    "selectImage": "Избери снимка:",
+    "caption": "Заглавие",
+    "coverPhoto": "Заглавна Снимка",
+    "uploadBtn": "Качи",
+    "validationErrorImage": "Трябва да избереш снимка",
+    "validationErrorRequired": "Задължително поле"
+  },
+  "notFound": {
+    "heading": "Ехе, намери ме! Най-после!",
+    "cta": "Да се прибираме вкъщи!"
+  }
+}

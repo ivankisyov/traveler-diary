@@ -1,0 +1,59 @@
+<h1 class="row justify-content-center">Add new place</h1>
+<form
+  [formGroup]="managePlacesForm"
+  class="row"
+  (ngSubmit)="onSubmit(managePlacesForm.value)"
+>
+  <div class="col-12 col-md-6 d-flex flex-column mb-5 mb-md-0">
+    <mat-form-field appearance="fill">
+      <mat-label>Name of the place</mat-label>
+      <input
+        matInput
+        placeholder="ex: Plovdiv"
+        formControlName="nameEn"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        formControlName="descriptionEn"
+        required
+        rows="10"
+      ></textarea>
+    </mat-form-field>
+  </div>
+  <div class="col-12 col-md-6 d-flex flex-column">
+    <mat-form-field appearance="fill">
+      <mat-label>Име на мястото</mat-label>
+      <input
+        matInput
+        placeholder="напр: Пловдив"
+        formControlName="nameBg"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Описание</mat-label>
+      <textarea
+        matInput
+        formControlName="descriptionBg"
+        required
+        rows="10"
+      ></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="col-12 justify-content-center d-flex">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      class="button"
+      [disabled]="!managePlacesForm.valid"
+    >
+      Save
+    </button>
+  </div>
+</form>

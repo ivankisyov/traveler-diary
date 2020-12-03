@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="dataSource.data.length" class="col-12">
+      <div class="mat-elevation-z8">
+        <table
+          mat-table
+          [dataSource]="dataSource"
+          class="mat-elevation-z8 w-100 mt-5"
+        >
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.name.en }}
+            </td>
+          </ng-container>
+
+          <!-- TODO: translate -->
+          <!-- Description Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td mat-cell *matCellDef="let element">
+              <div class="truncated-text w-150">
+                {{ element.description.en }}
+              </div>
+            </td>
+          </ng-container>
+
+          <!-- ID Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.id }}
+            </td>
+          </ng-container>
+
+          <!-- Upload Image Column -->
+          <ng-container matColumnDef="uploadImage">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+              <button
+                mat-raised-button
+                mat-icon-button
+                class="my-3"
+                color="primary"
+                (click)="openUploadImageDialog(element.id)"
+              >
+                <mat-icon>add_a_photo</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <!-- Delete Column -->
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+              <button
+                mat-raised-button
+                mat-icon-button
+                class="my-3"
+                color="warn"
+                (click)="delete(element.id, element.name)"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr
+            mat-row
+            *matRowDef="let row; columns: displayedColumns"
+          ></tr>
+        </table>
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 20]"
+          showFirstLastButtons
+        ></mat-paginator>
+      </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center p-5">
+      <button
+        mat-raised-button
+        color="primary"
+        class="button"
+        (click)="openAddNewPlaceDialog()"
+      >
+        Add New Place
+      </button>
+    </div>
+  </div>
+</div>

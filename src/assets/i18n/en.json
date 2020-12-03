@@ -1,0 +1,39 @@
+{
+  "mainMenu": {
+    "home": "Home",
+    "profile": "My Profile",
+    "visitedPlaces": "Visited Places"
+  },
+  "appTitle": "Traveler Diary",
+  "logout": "Log out",
+  "login": "Log in",
+  "home": {
+    "intro": "I love travelling and nature.",
+    "intro-subtitle": "Wanna see my traveller's collection:",
+    "cta": "Let's go!"
+  },
+  "profile": {
+    "roleLabel": "Role:",
+    "role": "Admin",
+    "manage": {
+      "heading": "Manage",
+      "ctaVisitedPlaces": "Visited Places",
+      "ctaWishlist": "Wishlist"
+    }
+  },
+  "visitedPlaces": {
+    "mainHeading": "Checkout where I've been so far"
+  },
+  "uploadImageForm": {
+    "selectImage": "Select image:",
+    "caption": "Caption",
+    "coverPhoto": "Cover Phooto",
+    "uploadBtn": "Upload",
+    "validationErrorImage": "You must select an image",
+    "validationErrorRequired": "This field is required"
+  },
+  "notFound": {
+    "heading": "You found me! At last!",
+    "cta": "Let's go home!"
+  }
+}

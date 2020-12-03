@@ -1,0 +1,85 @@
+<div class="col-12 d-flex justify-content-center p-5">
+  <form
+    [formGroup]="imageUploadForm"
+    (submit)="onSubmit(imageUploadForm.value)"
+  >
+    <img
+      [src]="imgSrc"
+      alt="image preview"
+      class="preview mb-4"
+      (click)="fileUploader.click()"
+    />
+
+    <div class="mb-4">
+      <div class="align-items-center d-flex justify-content-center">
+        <span class="mr-3 label">
+          {{ 'uploadImageForm.selectImage' | translate }}
+        </span>
+        <button
+          type="button"
+          mat-fab
+          color="primary"
+          class="no-outline upload-btn"
+          aria-label="upload image button"
+          (click)="fileUploader.click()"
+        >
+          <mat-icon>library_add</mat-icon>
+        </button>
+
+        <input
+          #fileUploader
+          style="display: none"
+          type="file"
+          accept="image/*"
+          formControlName="imageUrl"
+          (change)="showPreview($event)"
+        />
+      </div>
+      <div
+        *ngIf="
+          isImageUploadFormSubmitted &&
+          formControls.imageUrl.errors?.required
+        "
+        class="alert img-alert text-center m-0 p-0"
+      >
+        {{ 'uploadImageForm.validationErrorImage' | translate }}
+      </div>
+    </div>
+
+    <div>
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>
+          {{ 'uploadImageForm.caption' | translate }}</mat-label
+        >
+        <input
+          matInput
+          type="text"
+          formControlName="caption"
+          placeholder="Caption"
+        />
+        <mat-error
+          *ngIf="
+            isImageUploadFormSubmitted &&
+            formControls.caption.errors?.required
+          "
+          class="alert text-center"
+        >
+          {{ 'uploadImageForm.validationErrorRequired' | translate }}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="d-flex justify-content-center mb-4">
+      <mat-checkbox
+        class="example-margin"
+        formControlName="isCoverPhoto"
+      >
+        {{ 'uploadImageForm.coverPhoto' | translate }}
+      </mat-checkbox>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button mat-raised-button color="primary" type="submit">
+        {{ 'uploadImageForm.uploadBtn' | translate }}
+      </button>
+    </div>
+  </form>
+</div>

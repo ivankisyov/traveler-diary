@@ -1,0 +1,36 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.py-12 {
+  padding: 12px 0;
+}
+
+.ch-3 {
+  font-size: 3ch !important;
+}
+
+.w-350 {
+  width: 350px;
+}
+
+.w-150 {
+  width: 150px;
+}
+
+.no-outline {
+  outline: none !important;
+}
+
+.truncated-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

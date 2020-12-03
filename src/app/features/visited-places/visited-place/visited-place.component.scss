@@ -1,0 +1,63 @@
+$heading-theme-color: #eace49;
+
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  ::ng-deep gallery {
+    background-color: #fafafa;
+
+    .g-loading svg {
+      stroke: #3f51b5;
+    }
+  }
+}
+
+header {
+  height: 45vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    padding: 35px 55px;
+    color: #ffffff;
+    font-size: 40px;
+    position: relative;
+    text-shadow: 1px 1px 3px #000000;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      width: 35px;
+      bottom: 0;
+    }
+
+    &::before {
+      left: 0;
+      top: 0;
+      border-left: 5px solid $heading-theme-color;
+      border-top: 5px solid $heading-theme-color;
+      border-bottom: 5px solid $heading-theme-color;
+    }
+
+    &::after {
+      right: 0;
+      top: 0;
+      border-right: 5px solid $heading-theme-color;
+      border-top: 5px solid $heading-theme-color;
+      border-bottom: 5px solid $heading-theme-color;
+    }
+  }
+}
+
+main {
+  .description {
+    position: relative;
+    top: -40px;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="align-items-center col d-flex flex-column">
+      <h2 class="m-0 ch-3 text-center">
+        {{ 'home.intro' | translate }}
+      </h2>
+      <p class="mb-4 ch-3">
+        {{ 'home.intro-subtitle' | translate }}
+      </p>
+      <button
+        [routerLink]="['/visited-places']"
+        mat-raised-button
+        color="primary"
+      >
+        {{ 'home.cta' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

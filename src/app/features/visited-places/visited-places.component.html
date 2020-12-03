@@ -1,0 +1,36 @@
+<h1 class="mb-4 text-center">
+  {{ 'visitedPlaces.mainHeading' | translate }}
+</h1>
+
+<ng-container *ngIf="viewModel$ | async as viewModel">
+  <mat-card
+    class="visited-place-card mb-4"
+    *ngFor="let place of viewModel[1]"
+  >
+    <mat-card-header class="d-flex justify-content-center">
+      <mat-card-title>{{ place.name[viewModel[0]] }}</mat-card-title>
+    </mat-card-header>
+    <img
+      *ngIf="selectCoverPhoto(place.id) as image"
+      mat-card-image
+      class="cover-photo"
+      [src]="image.imageUrl"
+      [alt]="image.caption"
+    />
+    <mat-card-content>
+      <p class="truncated-text w-350">
+        {{ place.description[viewModel[0]] }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="d-flex justify-content-center">
+      <button
+        mat-raised-button
+        color="primary"
+        [routerLink]="['/visited-places', place.id]"
+        (click)="setSelectedPlaceID(place.id)"
+      >
+        More details
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</ng-container>
