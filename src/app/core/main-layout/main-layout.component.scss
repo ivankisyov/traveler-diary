@@ -99,12 +99,14 @@ a.active {
   background: #3f51b5;
   padding: 20px 0;
   color: white;
-  margin-top: 20px;
+  h2 {
+    font-size: 14px;
+  }
 }
 
 .site-wrapper {
   display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - 65px);
   flex-direction: column;
 }
 

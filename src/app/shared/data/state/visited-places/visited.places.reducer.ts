@@ -4,6 +4,7 @@ import { IPlace } from '@shared/data/models/place.interface';
 import {
   loadVisitedPlacesSuccess,
   setSelectedPlaceID,
+  setSelectedPlaceIDfromVisitedPlace,
 } from './visited.places.actions';
 import { IVisitedPlacesState } from './visited.places.model';
 
@@ -20,9 +21,13 @@ const reducer = createReducer(
   on(loadVisitedPlacesSuccess, (state, { visitedPlaces }) => {
     return adapter.addMany(visitedPlaces, state);
   }),
-  on(setSelectedPlaceID, (state, { id }) => {
-    return { ...state, selectedPlaceID: id };
-  })
+  on(
+    setSelectedPlaceID,
+    setSelectedPlaceIDfromVisitedPlace,
+    (state, { id }) => {
+      return { ...state, selectedPlaceID: id };
+    }
+  )
 );
 
 export function visitedPlacesReducer(

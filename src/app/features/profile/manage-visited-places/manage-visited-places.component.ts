@@ -13,6 +13,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { IPlace } from '@shared/data/models/place.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { UiUploadImageFormComponent } from '@shared/ui/ui-upload-image-form/ui-upload-image-form.component';
+import { Observable } from 'rxjs';
+import { selectLanguage } from '@shared/data/state/ui/ui.selectors';
 
 @Component({
   selector: 'traveler-manage-visited-places',
@@ -31,16 +33,18 @@ export class ManageVisitedPlacesComponent
     'delete',
   ];
 
-  visitedPlaces$ = this.store.select(selectVisitedPlaces);
-
   dataSource: MatTableDataSource<IPlace>;
+
+  currentLanguage$: Observable<string>;
 
   constructor(private store: Store, public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.visitedPlaces$.subscribe((places) => {
+    this.store.select(selectVisitedPlaces).subscribe((places) => {
       this.dataSource = new MatTableDataSource<IPlace>(places);
     });
+
+    this.currentLanguage$ = this.store.select(selectLanguage);
   }
 
   ngAfterViewInit(): void {

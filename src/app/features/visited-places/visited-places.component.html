@@ -1,4 +1,4 @@
-<h1 class="mb-4 text-center">
+<h1 class="mb-4 text-center main-heading">
   {{ 'visitedPlaces.mainHeading' | translate }}
 </h1>
 
@@ -18,7 +18,7 @@
       [alt]="image.caption"
     />
     <mat-card-content>
-      <p class="truncated-text w-350">
+      <p class="truncated-text">
         {{ place.description[viewModel[0]] }}
       </p>
     </mat-card-content>
@@ -29,7 +29,7 @@
         [routerLink]="['/visited-places', place.id]"
         (click)="setSelectedPlaceID(place.id)"
       >
-        More details
+        {{ 'visitedPlaces.moreDetails' | translate }}
       </button>
     </mat-card-actions>
   </mat-card>

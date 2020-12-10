@@ -2,4 +2,19 @@
   display: flex;
   align-items: center;
   min-height: 100%;
+  width: 100%;
+  background-image: url('/assets/ivan-kisyov-main.jpg');
+  background-size: cover;
+  background-position: 70% 50%;
+}
+
+.sub-heading {
+  color: white;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.heading {
+  color: #eace49;
+  text-transform: capitalize;
 }

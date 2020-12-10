@@ -117,10 +117,23 @@
       </mat-sidenav>
 
       <mat-sidenav-content class="justify-content-center">
-        <router-outlet></router-outlet>
-        <footer class="footer d-none justify-content-center">
-          Made with love by Ivan Kisyov
-        </footer>
+        <div class="site-wrapper">
+          <div class="main-content d-flex justify-content-center">
+            <router-outlet></router-outlet>
+          </div>
+          <footer class="footer d-flex justify-content-center">
+            <h2 class="m-0">
+              {{ 'footer.heading' | translate }}
+              <a
+                href="https://www.facebook.com/ivan.kisyov.549/"
+                [title]="'adminInfo.fbProfile' | translate"
+                target="_blank"
+              >
+                {{ 'adminInfo.name' | translate }}
+              </a>
+            </h2>
+          </footer>
+        </div>
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>

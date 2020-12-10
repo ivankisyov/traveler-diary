@@ -22,7 +22,13 @@
     }
   },
   "visitedPlaces": {
-    "mainHeading": "Виж къде съм бил до сега"
+    "mainHeading": "Виж къде съм бил до сега",
+    "moreDetails": "Виж повече"
+  },
+  "manageVisitedPlaces": {
+    "name": "Име",
+    "description": "Описание",
+    "addPlace": "Добави ново място"
   },
   "uploadImageForm": {
     "selectImage": "Избери снимка:",
@@ -32,8 +38,19 @@
     "validationErrorImage": "Трябва да избереш снимка",
     "validationErrorRequired": "Задължително поле"
   },
+  "placeForm": {
+    "mainHeading": "Добави ново място",
+    "saveBtn": "Запази"
+  },
+  "footer": {
+    "heading": "Изработено с мерак от"
+  },
   "notFound": {
     "heading": "Ехе, намери ме! Най-после!",
     "cta": "Да се прибираме вкъщи!"
+  },
+  "adminInfo": {
+    "name": "Иван Кисьов",
+    "fbProfile": "Фейсбук Профил на Иван Кисьов"
   }
 }

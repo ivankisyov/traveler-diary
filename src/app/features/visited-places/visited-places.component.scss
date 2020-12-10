@@ -16,3 +16,13 @@
 .visited-place-card {
   max-width: 400px;
 }
+
+.main-heading {
+  padding: 0 30px;
+}
+
+@media (max-width: 450px) {
+  .visited-place-card {
+    max-width: 300px;
+  }
+}

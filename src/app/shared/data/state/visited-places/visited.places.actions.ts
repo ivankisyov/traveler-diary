@@ -24,3 +24,8 @@ export const setSelectedPlaceID = createAction(
   '[visited-places] Set SelectedPlaceID',
   props<{ id: string }>()
 );
+
+export const setSelectedPlaceIDfromVisitedPlace = createAction(
+  '[visited-place] Set SelectedPlaceID',
+  props<{ id: string }>()
+);

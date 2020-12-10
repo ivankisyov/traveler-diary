@@ -2,12 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IPlace } from '@shared/data/models/place.interface';
 import { selectLanguage } from '@shared/data/state/ui/ui.selectors';
-import { selectCurrentVisitedPlace } from '@shared/data/state/visited-places/visited.places.selectors';
+import {
+  selectCurrentPlaceID,
+  selectCurrentVisitedPlace,
+} from '@shared/data/state/visited-places/visited.places.selectors';
 import { Observable, combineLatest } from 'rxjs';
 import { filter, map, tap, withLatestFrom } from 'rxjs/operators';
 import { IImageDetail } from '@shared/data/models/image.detail.interface';
 import { selectImageDetails } from '@shared/data/state/image-details/image.details.selectors';
 import { GalleryItem, ImageItem } from 'ng-gallery';
+import { ActivatedRoute } from '@angular/router';
+import { setSelectedPlaceIDfromVisitedPlace } from '@shared/data/state/visited-places/visited.places.actions';
 
 @Component({
   selector: 'traveler-visited-place',
@@ -23,9 +28,25 @@ export class VisitedPlaceComponent implements OnInit {
   place$: Observable<IPlace>;
   viewModel$;
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.store
+      .select(selectCurrentPlaceID)
+      .pipe(
+        map((id) => {
+          if (!id) {
+            const routeParamId = this.route.snapshot.paramMap.get(
+              'id'
+            );
+            this.store.dispatch(
+              setSelectedPlaceIDfromVisitedPlace({ id: routeParamId })
+            );
+          }
+        })
+      )
+      .subscribe();
+
     this.images$ = this.store.select(selectImageDetails).pipe(
       filter((images) => images.length > 0),
       withLatestFrom(this.store.select(selectCurrentVisitedPlace)),

@@ -22,7 +22,13 @@
     }
   },
   "visitedPlaces": {
-    "mainHeading": "Checkout where I've been so far"
+    "mainHeading": "Checkout where I've been so far",
+    "moreDetails": "More details"
+  },
+  "manageVisitedPlaces": {
+    "name": "Name",
+    "description": "Description",
+    "addPlace": "Add New Place"
   },
   "uploadImageForm": {
     "selectImage": "Select image:",
@@ -32,8 +38,19 @@
     "validationErrorImage": "You must select an image",
     "validationErrorRequired": "This field is required"
   },
+  "placeForm": {
+    "mainHeading": "Add new place",
+    "saveBtn": "Save"
+  },
+  "footer": {
+    "heading": "Made with passion by"
+  },
   "notFound": {
     "heading": "You found me! At last!",
     "cta": "Let's go home!"
+  },
+  "adminInfo": {
+    "name": "Ivan Kisyov",
+    "fbProfile": "Facebook profile of Ivan Kisyov"
   }
 }

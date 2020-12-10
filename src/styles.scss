@@ -4,9 +4,21 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+a {
+  color: #eace49;
+  text-decoration: none;
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+    color: #eace49;
+  }
 }
 
 .py-12 {

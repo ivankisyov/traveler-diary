@@ -4,6 +4,7 @@ $heading-theme-color: #eace49;
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 
   ::ng-deep gallery {
     background-color: #fafafa;
@@ -60,4 +61,10 @@ main {
     top: -40px;
     padding: 20px;
   }
+}
+
+.main-heading {
+  margin: 0 15px;
+  text-align: center;
+  line-height: 1.2;
 }
