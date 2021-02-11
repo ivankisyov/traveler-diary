@@ -42,7 +42,7 @@ export class UiPlacesFormComponent implements OnInit {
       },
       description: {
         en: value.descriptionEn,
-        bg: value.descriptionEn,
+        bg: value.descriptionBg,
       },
     };
 
